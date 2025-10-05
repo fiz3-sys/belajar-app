@@ -1,58 +1,74 @@
-// Cek login
-window.onload = function() {
+// ====== LOGIN CHECK ======
+window.onload = function () {
   const loggedIn = localStorage.getItem("loggedIn");
-  if (!loggedIn) {
-    window.location.href = "index.html";
-  }
-  tampilkanData();
+  if (!loggedIn) window.location.href = "index.html";
 };
 
-// Dummy data aktivitas maintenance
-let aktivitas = [
-  { tanggal: "2025-10-05", equipment: "Pump A1", deskripsi: "Ganti oli & cek tekanan", status: "Selesai" },
-  { tanggal: "2025-10-06", equipment: "Valve B2", deskripsi: "Periksa kebocoran", status: "Dalam Proses" },
-];
+// ====== TOGGLE SUBMENU ======
+function toggleSubmenu(menu) {
+  const submenu = document.getElementById(`submenu-${menu}`);
+  const arrow = document.getElementById(`arrow-${menu}`);
 
-// Tampilkan data di tabel
-function tampilkanData() {
-  const tabel = document.getElementById("tabelAktivitas");
-  tabel.innerHTML = "";
-  aktivitas.forEach((item, index) => {
-    tabel.innerHTML += `
-      <tr class="hover:bg-gray-50">
-        <td class="border px-4 py-2">${item.tanggal}</td>
-        <td class="border px-4 py-2">${item.equipment}</td>
-        <td class="border px-4 py-2">${item.deskripsi}</td>
-        <td class="border px-4 py-2">${item.status}</td>
-        <td class="border px-4 py-2 text-center">
-          <button onclick="hapusAktivitas(${index})" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Hapus</button>
-        </td>
-      </tr>`;
-  });
-}
-
-// Fungsi tambah aktivitas baru
-function tambahAktivitas() {
-  const tanggal = prompt("Tanggal (YYYY-MM-DD):");
-  const equipment = prompt("Nama Equipment:");
-  const deskripsi = prompt("Deskripsi Aktivitas:");
-  const status = prompt("Status (Selesai/Dalam Proses):");
-
-  if (tanggal && equipment && deskripsi && status) {
-    aktivitas.push({ tanggal, equipment, deskripsi, status });
-    tampilkanData();
+  if (submenu.classList.contains("hidden")) {
+    submenu.classList.remove("hidden");
+    arrow.classList.add("rotate-180");
+  } else {
+    submenu.classList.add("hidden");
+    arrow.classList.remove("rotate-180");
   }
 }
 
-// Hapus aktivitas
-function hapusAktivitas(index) {
-  if (confirm("Yakin ingin menghapus aktivitas ini?")) {
-    aktivitas.splice(index, 1);
-    tampilkanData();
+// ====== HALAMAN KONTEN ======
+function tampilkanHalaman(halaman) {
+  const judul = document.getElementById("judulHalaman");
+  const konten = document.getElementById("kontenHalaman");
+
+  if (halaman === "aktivitas") {
+    judul.innerText = "Aktivitas Maintenance";
+    konten.innerHTML = `
+      <table class="min-w-full border border-gray-200">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-4 py-2 border">Tanggal</th>
+            <th class="px-4 py-2 border">Equipment</th>
+            <th class="px-4 py-2 border">Deskripsi</th>
+            <th class="px-4 py-2 border">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2">2025-10-05</td>
+            <td class="border px-4 py-2">Pump A1</td>
+            <td class="border px-4 py-2">Cek oli dan tekanan</td>
+            <td class="border px-4 py-2">Selesai</td>
+          </tr>
+        </tbody>
+      </table>
+    `;
+
+  } else if (halaman === "riwayat") {
+    judul.innerText = "Riwayat Maintenance";
+    konten.innerHTML = `<p>Riwayat perawatan mesin akan muncul di sini.</p>`;
+
+  } else if (halaman === "stok") {
+    judul.innerText = "Stok Barang";
+    konten.innerHTML = `<p>Daftar stok suku cadang akan ditampilkan di sini.</p>`;
+
+  } else if (halaman === "penggunaan") {
+    judul.innerText = "Penggunaan Barang";
+    konten.innerHTML = `<p>Data penggunaan material dan sparepart.</p>`;
+
+  } else if (halaman === "laporan") {
+    judul.innerText = "Laporan Periodik";
+    konten.innerHTML = `<p>Fitur laporan sedang dikembangkan 🚧</p>`;
+
+  } else {
+    judul.innerText = "Dashboard";
+    konten.innerHTML = `<p>Selamat datang di sistem Maintenance.</p>`;
   }
 }
 
-// Logout
+// ====== LOGOUT ======
 function logout() {
   localStorage.removeItem("loggedIn");
   window.location.href = "index.html";
