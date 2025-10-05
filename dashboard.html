@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Maintenance</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -10,39 +10,58 @@
 <body class="bg-gray-100 flex min-h-screen">
 
   <!-- Sidebar -->
-  <aside class="w-64 bg-blue-700 text-white flex flex-col">
-    <div class="p-4 text-center font-bold text-xl border-b border-blue-500">
-      Maintenance App
+  <aside id="sidebar" class="w-64 bg-blue-800 text-white flex flex-col transition-all duration-300">
+    <div class="p-4 text-center font-bold text-xl border-b border-blue-600">
+      ⚙️ Maintenance System
     </div>
 
-    <nav class="flex-1 p-2 space-y-2">
-      <button onclick="tampilkanHalaman('aktivitas')"
-        class="w-full text-left px-4 py-2 rounded hover:bg-blue-600">
-        📋 Aktivitas Maintenance
-      </button>
-      <button onclick="tampilkanHalaman('riwayat')"
-        class="w-full text-left px-4 py-2 rounded hover:bg-blue-600">
-        📅 Riwayat Maintenance
-      </button>
-      <button onclick="tampilkanHalaman('laporan')"
-        class="w-full text-left px-4 py-2 rounded hover:bg-blue-600">
-        📊 Laporan
-      </button>
+    <nav class="flex-1 overflow-y-auto p-2 space-y-2">
+      <!-- MAIN MENU: Maintenance -->
+      <div>
+        <button onclick="toggleSubmenu('maintenance')" class="w-full flex justify-between items-center px-4 py-2 hover:bg-blue-700 rounded">
+          <span>🧰 Maintenance</span>
+          <span id="arrow-maintenance" class="transform transition-transform">▼</span>
+        </button>
+        <div id="submenu-maintenance" class="pl-6 mt-1 space-y-1">
+          <button onclick="tampilkanHalaman('aktivitas')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Aktivitas</button>
+          <button onclick="tampilkanHalaman('riwayat')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Riwayat</button>
+        </div>
+      </div>
+
+      <!-- MAIN MENU: Inventory -->
+      <div>
+        <button onclick="toggleSubmenu('inventory')" class="w-full flex justify-between items-center px-4 py-2 hover:bg-blue-700 rounded">
+          <span>📦 Inventory</span>
+          <span id="arrow-inventory" class="transform transition-transform">▼</span>
+        </button>
+        <div id="submenu-inventory" class="pl-6 mt-1 space-y-1 hidden">
+          <button onclick="tampilkanHalaman('stok')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Stok Barang</button>
+          <button onclick="tampilkanHalaman('penggunaan')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Penggunaan</button>
+        </div>
+      </div>
+
+      <!-- MAIN MENU: Reports -->
+      <div>
+        <button onclick="toggleSubmenu('reports')" class="w-full flex justify-between items-center px-4 py-2 hover:bg-blue-700 rounded">
+          <span>📊 Reports</span>
+          <span id="arrow-reports" class="transform transition-transform">▼</span>
+        </button>
+        <div id="submenu-reports" class="pl-6 mt-1 space-y-1 hidden">
+          <button onclick="tampilkanHalaman('laporan')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Laporan Periodik</button>
+        </div>
+      </div>
     </nav>
 
-    <div class="p-4 border-t border-blue-500">
-      <button onclick="logout()" class="bg-red-500 w-full py-2 rounded hover:bg-red-600">
-        Logout
-      </button>
+    <div class="p-4 border-t border-blue-600">
+      <button onclick="logout()" class="bg-red-500 w-full py-2 rounded hover:bg-red-600">Logout</button>
     </div>
   </aside>
 
   <!-- Konten Utama -->
   <main class="flex-1 p-6">
-    <h2 id="judulHalaman" class="text-2xl font-semibold mb-4">Aktivitas Maintenance</h2>
+    <h2 id="judulHalaman" class="text-2xl font-semibold mb-4">Dashboard</h2>
     <div id="kontenHalaman" class="bg-white shadow rounded-lg p-4">
-      <!-- Konten akan berubah lewat JS -->
-      <p>Memuat data aktivitas maintenance...</p>
+      <p>Selamat datang di sistem Maintenance. Pilih menu di sidebar untuk mulai.</p>
     </div>
   </main>
 
