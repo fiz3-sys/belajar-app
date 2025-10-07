@@ -25,8 +25,8 @@ function tampilkanHalaman(halaman) {
 if (halaman=== "reppm") {
   judul.innerText = "Submission Pengantian Parts saat PM"
   konten.innerHTML ='<p> "Foto" </p>'
-
-    else if (halaman === "aktivitas") {
+;
+ }   else if (halaman === "aktivitas") {
     judul.innerText = "Aktivitas Maintenance";
     konten.innerHTML = `
       <table class="min-w-full border border-gray-200">
