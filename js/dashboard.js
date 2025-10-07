@@ -24,55 +24,7 @@ function tampilkanHalaman(halaman) {
   const konten = document.getElementById("kontenHalaman");
 if (jalaman=== "reppm") {
   judul.innerText = "Submission Pengantian Parts saat PM"
-  konten.innerHTML = 
-  <input type="file" accept="image/*" capture="camera" id="photoInput" class="mb-4">
-
-  <!-- Tombol simpan -->
-  <button id="savePhoto" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-    Simpan Foto
-  </button>
-
-  <h2 class="text-md font-semibold mt-6">📁 Daftar Foto</h2>
-  <div id="photoList" class="mt-2 grid grid-cols-2 gap-2"></div>
-
-  <script>
-    const photoInput = document.getElementById("photoInput");
-    const savePhoto = document.getElementById("savePhoto");
-    const photoList = document.getElementById("photoList");
-
-    // Ambil data foto yang tersimpan
-    const storedPhotos = JSON.parse(localStorage.getItem("photos") || "[]");
-
-    // Render awal
-    renderPhotos();
-
-    savePhoto.onclick = () => {
-      const file = photoInput.files[0];
-      if (!file) {
-        alert("Pilih atau ambil foto dulu!");
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        storedPhotos.push(e.target.result);
-        localStorage.setItem("photos", JSON.stringify(storedPhotos));
-        renderPhotos();
-        photoInput.value = "";
-      };
-      reader.readAsDataURL(file);
-    };
-
-    function renderPhotos() {
-      photoList.innerHTML = storedPhotos
-        .map((src, i) => `
-          <div class="border p-2 rounded">
-            <img src="${src}" class="w-full h-32 object-cover rounded" alt="Foto ${i+1}">
-          </div>
-        `)
-        .join("");
-    }
-  </script>
+  konten.innerHTML ='<p> "Foto" </p>'
 }
     else if (halaman === "aktivitas") {
     judul.innerText = "Aktivitas Maintenance";
