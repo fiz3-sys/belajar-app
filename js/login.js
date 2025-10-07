@@ -4,7 +4,7 @@ function handleLogin() {
 
   if (username === "admin" && password === "1234") {
     localStorage.setItem("loggedIn", true);
-    window.location.href = "dashboard.html";
+    window.location.href = "fotopm.html";
   } else {
     alert("Username atau password salah!");
   }
