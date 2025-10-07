@@ -14,16 +14,35 @@
     <div class="p-4 text-center font-bold text-xl border-b border-blue-600">
       ⚙️ Maintenance System
     </div>
-
+    
     <nav class="flex-1 overflow-y-auto p-2 space-y-2">
+      <!-- MAIN MENU: Home and Founding Abnormal/Reports breakdown -->
+      <div>
+        <button onclick="toggleSubmenu('maintenance')" class="w-full flex justify-between items-center px-4 py-2 hover:bg-blue-700 rounded">
+          
+          <span>Action</span>
+          <span id="arrow-maintenance" class="transform transition-transform">▼</span>
+        </button>
+        
+        <div id="submenu-maintenance" class="pl-6 mt-1 space-y-1">
+          <button onclick="tampilkanHalaman('aktivitas')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Submission Spare parts Photo</button>
+        
+          <button onclick="tampilkanHalaman('riwayat')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Hasil Analisis Breakdown</button>
+        </div>
+      </div>
+
+    
       <!-- MAIN MENU: Maintenance -->
       <div>
         <button onclick="toggleSubmenu('maintenance')" class="w-full flex justify-between items-center px-4 py-2 hover:bg-blue-700 rounded">
+          
           <span>🧰 Maintenance</span>
           <span id="arrow-maintenance" class="transform transition-transform">▼</span>
         </button>
+        
         <div id="submenu-maintenance" class="pl-6 mt-1 space-y-1">
           <button onclick="tampilkanHalaman('aktivitas')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Aktivitas</button>
+        
           <button onclick="tampilkanHalaman('riwayat')" class="block w-full text-left px-2 py-1 hover:bg-blue-700 rounded">Riwayat</button>
         </div>
       </div>
