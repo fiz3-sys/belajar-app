@@ -25,7 +25,6 @@ function tampilkanHalaman(halaman) {
 if (halaman=== "reppm") {
   judul.innerText = "Submission Pengantian Parts saat PM"
   konten.innerHTML ='<p> "Foto" </p>'
-}
     else if (halaman === "aktivitas") {
     judul.innerText = "Aktivitas Maintenance";
     konten.innerHTML = `
@@ -69,7 +68,10 @@ if (halaman=== "reppm") {
     judul.innerText = "Dashboard";
     konten.innerHTML = `<p>Selamat datang di sistem Maintenance.</p>`;
   }
+  
 }
+
+
 
 // ====== LOGOUT ======
 function logout() {
