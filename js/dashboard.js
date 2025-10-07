@@ -25,6 +25,7 @@ function tampilkanHalaman(halaman) {
 if (halaman=== "reppm") {
   judul.innerText = "Submission Pengantian Parts saat PM"
   konten.innerHTML ='<p> "Foto" </p>'
+  <script src="js/fotopm.js"></js>
 ;
  }   else if (halaman === "aktivitas") {
     judul.innerText = "Aktivitas Maintenance";
