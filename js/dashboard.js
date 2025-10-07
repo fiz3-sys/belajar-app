@@ -22,7 +22,7 @@ function toggleSubmenu(menu) {
 function tampilkanHalaman(halaman) {
   const judul = document.getElementById("judulHalaman");
   const konten = document.getElementById("kontenHalaman");
-if (jalaman=== "reppm") {
+if (halaman=== "reppm") {
   judul.innerText = "Submission Pengantian Parts saat PM"
   konten.innerHTML ='<p> "Foto" </p>'
 }
