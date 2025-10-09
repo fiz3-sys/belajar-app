@@ -25,6 +25,7 @@ function tampilkanHalaman(halaman) {
 if (halaman=== "reppm") {
   judul.innerText = "Submission Pengantian Parts saat PM"
   konten.innerHTML = `
+  Cari <input id="lapor" type="text"></input>
    <table class="min-w-full border border-gray-200">
         <thead class="bg-gray-100">
           <tr>
