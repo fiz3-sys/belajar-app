@@ -34,17 +34,22 @@ if (halaman=== "reppm") {
         <thead class="bg-gray-100">
           <tr>
             <th class="px-4 py-2 border">Tanggal</th>
+            <th class="px-4 py-2 border">No Job</th>
             <th class="px-4 py-2 border">Equipment</th>
             <th class="px-4 py-2 border">Deskripsi</th>
             <th class="px-4 py-2 border">Status</th>
+            <th class="px-4 py-2 border">Photo</th>
+            
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="border px-4 py-2">2025-10-05</td>
+            <td class="border px-4 py-2">Job-1</td>
             <td class="border px-4 py-2">Pump A1</td>
             <td class="border px-4 py-2">Cek oli dan tekanan</td>
             <td class="border px-4 py-2">Selesai</td>
+            <td class="border px-4 py-2"><input type="button" value="+"></input> 
           </tr>
         </tbody>
       </table>
