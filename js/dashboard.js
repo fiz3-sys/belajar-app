@@ -48,9 +48,6 @@ if (halaman=== "reppm") {
           </tr>
         </tbody>
       </table>
-  
-  
-;
  }   else if (halaman === "riwayat") {
     judul.innerText = "Aktivitas Maintenance";
     konten.innerHTML = `
