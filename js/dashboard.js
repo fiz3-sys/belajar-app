@@ -24,7 +24,7 @@ function tampilkanHalaman(halaman) {
   const konten = document.getElementById("kontenHalaman");
 if (halaman=== "reppm") {
   judul.innerText = "Submission Pengantian Parts saat PM"
-  konten.innerHTML =
+  konten.innerHTML = "Photo"
    
  }   else if (halaman === "riwayat") {
     judul.innerText = "Aktivitas Maintenance";
