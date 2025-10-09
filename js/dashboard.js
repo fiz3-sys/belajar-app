@@ -48,7 +48,7 @@ if (halaman=== "reppm") {
             <td class="border px-4 py-2">Pump A1</td>
             <td class="border px-4 py-2">Cek oli dan tekanan</td>
             <td class="border px-4 py-2">Selesai</td>
-            <td class="border px-4 py-2"><a href="www.google.com">tanggal foto</a>
+            
           </tr>
         </tbody>
       </table>
