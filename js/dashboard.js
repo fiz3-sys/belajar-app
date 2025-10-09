@@ -27,7 +27,7 @@ if (halaman=== "reppm") {
   konten.innerHTML ='<p> "Foto" </p>'
   
 ;
- }   else if (halaman === "aktivitas") {
+ }   else if (halaman === "riwayat") {
     judul.innerText = "Aktivitas Maintenance";
     konten.innerHTML = `
       <table class="min-w-full border border-gray-200">
@@ -49,10 +49,6 @@ if (halaman=== "reppm") {
         </tbody>
       </table>
     `;
-
-  } else if (halaman === "riwayat") {
-    judul.innerText = "Riwayat Maintenance";
-    konten.innerHTML = `<p>Riwayat perawatan mesin akan muncul di sini.</p>`;
 
   } else if (halaman === "stok") {
     judul.innerText = "Stok Barang";
